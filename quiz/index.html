@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Mint Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Fresh Mint Quiz</h1>
+        <div id="quiz-area">
+            <div class="timer-container">
+                Time Left: <span id="timer"></span>s
+            </div>
+            <h2 class="question-text" id="question-text"></h2>
+            <div class="answer-buttons" id="answer-buttons">
+                <!-- Answer buttons will be dynamically added here -->
+            </div>
+            <button class="next-btn" id="next-btn">Next</button>
+        </div>
+        
+        <div id="score-container">
+            <h2>Quiz Finished!</h2>
+            <p id="final-score">Your score: 0 out of 10</p>
+            <div class="chart-container">
+              <canvas id="score-chart"></canvas>
+            </div>
+            <button class="restart-btn" id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
