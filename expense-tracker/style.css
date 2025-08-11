@@ -1,0 +1,212 @@
+.app-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+  
+
+}
+
+body.dark .app-container {
+    background: rgba(30, 30, 30, 0.8);
+}
+
+:root {
+    /* Light mode colors */
+    --bg-color: linear-gradient(135deg, #f6f9fc, #dbe9f6);
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --income-color: #4caf50;
+    --expense-color: #f44336;
+    --primary-color: #3f51b5;
+}
+
+body.dark {
+    /* Dark mode colors */
+    --bg-color: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    --card-bg: #1e1e1e;
+    --text-color: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    background-attachment: fixed;
+    color: var(--text-color);
+    padding: 20px;
+    transition: background 0.5s ease, color 0.3s ease;
+}
+
+/* Center all headers */
+header, h1, h2, h3 {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    flex: 1;
+}
+
+header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+header button:hover {
+    transform: scale(1.2);
+}
+
+.dashboard {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 150px;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card.income p {
+    color: var(--income-color);
+}
+
+.card.expense p {
+    color: var(--expense-color);
+}
+
+/* Center Add Transaction header */
+.add-transaction h2 {
+    margin-bottom: 10px;
+}
+
+.add-transaction form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.add-transaction input, 
+.add-transaction select, 
+.add-transaction button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    flex: 1;
+    transition: border 0.3s ease, background 0.3s ease;
+}
+
+.add-transaction input:focus, 
+.add-transaction select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.add-transaction button {
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.add-transaction button:hover {
+    background: #2e3c92;
+    transform: scale(1.05);
+}
+
+.filters {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #2e3c92;
+    transform: translateY(-2px);
+}
+
+.transactions ul {
+    list-style: none;
+}
+
+.transactions li {
+    background: var(--card-bg);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.transactions li.income {
+    border-left: 5px solid var(--income-color);
+}
+
+.transactions li.expense {
+    border-left: 5px solid var(--expense-color);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Fade animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-5px); }
+}
